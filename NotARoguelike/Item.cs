@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace NotARoguelike
 {
-    class Character
+    class Item
     {
-        public Character(Tile tile, Floor floor, Chixel chixel)
-        {
-
-        }
     }
 }

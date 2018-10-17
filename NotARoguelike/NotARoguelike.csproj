@@ -44,9 +44,11 @@
   <ItemGroup>
     <Compile Include="Character.cs" />
     <Compile Include="Chixel.cs" />
+    <Compile Include="Floor.cs" />
     <Compile Include="FrameBuffer.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Intro.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="KeyboardHandler.cs" />
     <Compile Include="Messages.cs" />
     <Compile Include="PlayerCharacter.cs" />

@@ -20,8 +20,10 @@ namespace NotARoguelike
             Messages = new Messages();
         }
 
+        public PlayerCharacter PlayerCharacter { get; set; }
+
         private readonly FrameBuffer frameBuffer;
-        private readonly Messages Messages;
+        public Messages Messages;
         public Random Random;
         public InputMode InputMode = InputMode.Normal;
 

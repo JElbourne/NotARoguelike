@@ -42,14 +42,14 @@ namespace NotARoguelike
                 messageLog.Add(m2);
         }
 
-        //public void DebugMessage(string m)
-        //{
-        //    // check debug flag
-        //    if (false)
-        //    {
-        //        Message("[DEBUG] " + m);
-        //    }
-        //}
+        public void DebugMessage(string m)
+        {
+            // check debug flag
+            if (false)
+            {
+                //Message("[debug] " + m);
+            }
+        }
 
     }
 }

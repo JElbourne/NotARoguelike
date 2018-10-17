@@ -8,7 +8,7 @@ namespace NotARoguelike
 {
     class PlayerCharacter : Character
     {
-        public PlayerCharacter()
+        public PlayerCharacter(Tile tile, Floor floor, Chixel chixel) : base(tile, floor, chixel)
         {
             _instance = this;
         }
