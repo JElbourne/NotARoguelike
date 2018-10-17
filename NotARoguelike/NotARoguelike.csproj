@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrameBuffer.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Intro.cs" />
     <Compile Include="KeyboardHandler.cs" />

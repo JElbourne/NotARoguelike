@@ -14,12 +14,15 @@ namespace NotARoguelike
         {
             _instance = this;
 
+            frameBuffer = new FrameBuffer(0, 0, Console.WindowWidth, Console.WindowHeight - 1);
+
             Random = new Random();
             Messages = new Messages();
         }
 
-        public Random Random;
+        private readonly FrameBuffer frameBuffer;
         private readonly Messages Messages;
+        public Random Random;
         public InputMode InputMode = InputMode.Normal;
 
         public bool Restart = false;
@@ -63,7 +66,7 @@ namespace NotARoguelike
             if (ClearRequested)
             {
                 ClearRequested = false;
-                //FrameBuffer.Instance.Clear();
+                FrameBuffer.Instance.Clear();
             }
 
             KeyboardHandler.Update_Keyboard();
