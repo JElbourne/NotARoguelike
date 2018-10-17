@@ -42,11 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Character.cs" />
     <Compile Include="FrameBuffer.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Intro.cs" />
     <Compile Include="KeyboardHandler.cs" />
     <Compile Include="Messages.cs" />
+    <Compile Include="PlayerCharacter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
