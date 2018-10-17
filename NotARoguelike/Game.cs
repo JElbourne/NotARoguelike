@@ -71,7 +71,7 @@ namespace NotARoguelike
 
             KeyboardHandler.Update_Keyboard();
 
-            return true;
+            return false;
         }
     }
 }
