@@ -30,8 +30,8 @@ namespace NotARoguelike
 
                 Game game = new Game();
 
-                //Intro intro = new Intro();
-                //intro.Play();
+                Intro intro = new Intro();
+                intro.Play();
 
                 while (game.Update())
                 {
