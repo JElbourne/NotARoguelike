@@ -23,6 +23,7 @@ namespace NotARoguelike
         public InputMode InputMode = InputMode.Normal;
 
         public bool Restart = false;
+        public bool ClearRequested = false;
 
         public int SleepFor { get; set; }
         private readonly int statAreaWidth = 16;
@@ -59,6 +60,14 @@ namespace NotARoguelike
 
         public bool Update()
         {
+            if (ClearRequested)
+            {
+                ClearRequested = false;
+                //FrameBuffer.Instance.Clear();
+            }
+
+            KeyboardHandler.Update_Keyboard();
+
             return true;
         }
     }
