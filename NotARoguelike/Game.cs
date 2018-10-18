@@ -10,19 +10,11 @@ namespace NotARoguelike
 
     class Game
     {
-        public Game()
-        {
-            _instance = this;
-
-            frameBuffer = new FrameBuffer(0, 0, Console.WindowWidth, Console.WindowHeight - 1);
-
-            Random = new Random();
-            Messages = new Messages();
-        }
-
         public PlayerCharacter PlayerCharacter { get; set; }
+        public Map Map { get; protected set; }
 
         private readonly FrameBuffer frameBuffer;
+        public Rect LevelRenderArea;
         public Messages Messages;
         public Random Random;
         public InputMode InputMode = InputMode.Normal;
@@ -37,6 +29,19 @@ namespace NotARoguelike
         private bool exit = false;
         private bool doTick = false;
         #endregion
+
+        public Game()
+        {
+            _instance = this;
+
+            Random = new Random();
+            Messages = new Messages();
+
+            frameBuffer = new FrameBuffer(0, 0, Console.WindowWidth, Console.WindowHeight - 1);
+            LevelRenderArea = new Rect(0, 0, 80 - statAreaWidth, 24 - 3);
+
+            Map = new Map();
+        }
 
         static private Game _instance;
 
@@ -73,7 +78,10 @@ namespace NotARoguelike
 
             KeyboardHandler.Update_Keyboard();
 
-            return false;
+            Map.CurrentFloor.Update(doTick);
+            doTick = false;
+
+            return true;
         }
     }
 }

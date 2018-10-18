@@ -52,6 +52,24 @@ namespace NotARoguelike
             }
         }
 
+        public void Draw(int viewOffsetX, int viewOffsetY)
+        {
+            if (WasSeen == false)
+            {
+                FrameBuffer.Instance.SetChixel(X + viewOffsetX, Y + viewOffsetY, '\u2591');
+                return;
+            }
+
+            if (Item != null)
+            {
+                // Draw item
+                Item.Draw(X + viewOffsetX, Y + viewOffsetY);
+                return;
+            }
+
+            FrameBuffer.Instance.SetChixel(X + viewOffsetX, Y + viewOffsetY, Chixel);
+        }
+
         public TileType TileType
         {
             get
@@ -67,6 +85,14 @@ namespace NotARoguelike
                     Chixel.ForegroundColor = ConsoleColor.Red;
                 }
             }
+        }
+
+        public bool IsWalkable()
+        {
+            return TileType != TileType.DOOR_LOCKED &&
+                                       TileType != TileType.WALL &&
+                                       TileType != TileType.DEBRIS;
+
         }
     }
 }
