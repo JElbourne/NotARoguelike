@@ -8,6 +8,7 @@ namespace NotARoguelike
 {
     class PlayerCharacter : Character
     {
+        public const int DefaultVisionRadius = 2;
 
         private int target_dX;
         private int target_dY;
@@ -41,6 +42,7 @@ namespace NotARoguelike
         public PlayerCharacter(Tile tile, Floor floor, Chixel chixel) : base(tile, floor, chixel)
         {
             _instance = this;
+            VisionRadius = DefaultVisionRadius;
         }
 
         public override void Update()

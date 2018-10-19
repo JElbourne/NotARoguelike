@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace NotARoguelike
@@ -41,6 +42,9 @@ namespace NotARoguelike
             LevelRenderArea = new Rect(0, 0, 80 - statAreaWidth, 24 - 3);
 
             Map = new Map();
+
+            PlayerCharacter.UpdateVision();
+            Map.CurrentFloor.Recenter(true);
         }
 
         static private Game _instance;
@@ -80,6 +84,19 @@ namespace NotARoguelike
 
             Map.CurrentFloor.Update(doTick);
             doTick = false;
+
+            frameBuffer.DrawFrame();
+
+            if (exit || Restart)
+            {
+                return false;
+            }
+
+            if (SleepFor > 0)
+            {
+                Thread.Sleep(SleepFor);
+                SleepFor = 0;
+            }
 
             return true;
         }

@@ -30,8 +30,11 @@ namespace NotARoguelike
             this.Floor = floor;
             Item item;
 
+            TileType = TileType.FLOOR;
+             
             switch (textChar)
             {
+
                 case ' ':
                     break;
                 case '#':

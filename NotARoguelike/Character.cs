@@ -59,7 +59,14 @@ namespace NotARoguelike
 
         public Character(Tile tile, Floor floor, Chixel chixel)
         {
+            this.Floor = floor;
+            this.X = tile.X;
+            this.Y = tile.Y;
+            this.Tile = tile;
 
+            this.Chixel = chixel;
+
+            this.Floor.AddCharacter(this);
         }
 
         virtual public void Update()
